@@ -1,0 +1,104 @@
+digraph G {
+node0 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.0, 0.0, 0.0))
+Position_a"]
+node1 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (100)
+RatePerUnit_a"]
+node2 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (50)
+VelocityThreshold_a"]
+node3 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Boolean (False)
+ClampToOne_a"]
+node4 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (10)
+Rate_a"]
+node5 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.0, 1.0, 0.0))
+bounds_center
+bounds_center
+bounds_center"]
+node6 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((2.0, 3.0, 2.0))
+bounds_size
+bounds_size
+bounds_size"]
+node7 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeGradient Float
+Color_a"]
+node8 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 ColorGradient (UnityEngine.Gradient)"]
+node9 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (1)
+Lifetime_b
+A_c
+Drag_a
+frequency_a
+Drag_a
+frequency_a"]
+node10 [shape="box" color="cyan" style="filled" label="VFXExpressionAdd Float3
+Position_a"]
+node11 [shape="box" label="VFXValue`1 Float3 ((0.0, 0.0, 0.0))"]
+node12 [shape="box" color="cyan" style="filled" label="VFXBuiltInExpression Float (DeltaTime)
+deltaTime_b
+deltaTime_a
+deltaTime_b
+deltaTime_c
+deltaTime_d
+deltaTime_a
+deltaTime_b
+deltaTime_c"]
+node13 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeCurve Float4
+Size_a"]
+node14 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Curve (UnityEngine.AnimationCurve)"]
+node15 [shape="box" color="cyan" style="filled" label="VFXTexture2DValue Texture2D (834)
+mainTexture"]
+node16 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((-0.3, 0.2, -0.3))
+A_a"]
+node17 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.3, 1.0, 0.3))
+B_a"]
+node18 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeGradient Float
+Color_b"]
+node19 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 ColorGradient (UnityEngine.Gradient)"]
+node20 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (3)
+B_c
+Lifetime_c"]
+node21 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Matrix4x4 (3.33333	0.00000	0.00000	0.00000
+0.00000	3.33333	0.00000	0.00000
+0.00000	0.00000	3.33333	0.00000
+0.00000	0.00000	0.00000	1.00000
+)
+InvFieldTransform_a
+InvFieldTransform_a"]
+node22 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Matrix4x4 (0.30000	0.00000	0.00000	0.00000
+0.00000	0.30000	0.00000	0.00000
+0.00000	0.00000	0.30000	0.00000
+0.00000	0.00000	0.00000	1.00000
+)
+FieldTransform_a
+FieldTransform_a"]
+node23 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (5)
+Intensity_a"]
+node24 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Int32 (3)
+octaves_a"]
+node25 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.8348661)
+roughness_a
+roughness_a"]
+node26 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (2)
+lacunarity_a
+lacunarity_a"]
+node27 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (30)
+Rate_b"]
+node28 [shape="box" color="orange" style="filled" label="VFXAttributeExpression Float3 (position)
+Value_a"]
+node29 [shape="box" color="orange" style="filled" label="VFXAttributeExpression Float3 (color)
+Value_b"]
+node30 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.1)
+Intensity_a"]
+node31 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Int32 (1)
+octaves_a"]
+node32 [shape="box" color="orange" style="filled" label="VFXExpressionStripTangent Float3
+stripTangent_a"]
+node33 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeCurve Float4
+Size_b"]
+node34 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Curve (UnityEngine.AnimationCurve)"]
+node35 [shape="box" color="cyan" style="filled" label="VFXTexture2DValue Texture2D (820)
+mainTexture"]
+node8 -> node7 
+node5 -> node10 [headlabel="0"]
+node11 -> node10 [headlabel="1"]
+node14 -> node13 
+node19 -> node18 
+node34 -> node33 
+}

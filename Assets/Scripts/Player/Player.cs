@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         }
         else if (context.interaction is HoldInteraction)
         {
-            m_Gun.SetHoldShoot(context.performed);
+            m_Gun.SetHoldShoot(context.started || context.performed);
         }
         
     }

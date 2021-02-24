@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     public Projectile projectile;
     public float rateOfFire = 10;   // Number of projectile per second
     public float muzzleVelocity = 35;
+    public float projectileTimeToLive = 2;
 
     private float m_nextShotTimer;
     private float m_ShotTimeStep;
@@ -36,6 +37,8 @@ public class Gun : MonoBehaviour
             m_nextShotTimer = Time.time + m_ShotTimeStep;
             Projectile newProjectile = Instantiate(projectile, muzzle.position, muzzle.rotation) as Projectile;
             newProjectile.speed = muzzleVelocity;
+            newProjectile.timeOut = Time.time + projectileTimeToLive;
+            newProjectile.vfx.SendEvent("OnPlay");
         }
     }
 }

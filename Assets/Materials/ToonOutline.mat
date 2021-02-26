@@ -35,7 +35,7 @@ Material:
     - Vector1_06042c3c029a4f07beb60a26430712d3: 0
     - _OUTLINE_DEPTH_SENSITIVITY: 0.6
     - _OUTLINE_NORMAL_SENSITIVITY: 0.5
-    - _OUTLINE_THICKNESS: 2
+    - _OUTLINE_THICKNESS: 0
     m_Colors:
     - MAIN_COLOR: {r: 0.8773585, g: 0.3517711, b: 0.3517711, a: 0}
     - Vector3_3396277ec6264654b122e990f9504593: {r: 0, g: 0, b: 0, a: 0}

@@ -9,21 +9,25 @@ public class Player : MonoBehaviour
 {
     public float speed = 10;
 
-    public LineOfSightRenderer lightOfSightRenderer;
     public PlayerInput playerInput;
     public Gun startingGun;
 
-    private LineRenderer m_LineRenderer;
     private Camera m_Camera;
     private Plane m_GroundPlane;
     private Vector2 m_Velocity;
-    private Vector3 m_LookAtPos;
+    private class Aim
+    {
+        public Vector3 pos;
+        public bool changed = false;
+    }
+
+    private Aim m_Aim = new Aim();
+
     private Gun m_Gun;
     private Transform m_RightHand;
 
     private void Start()
     {
-        m_LineRenderer = GetComponent<LineRenderer>();
         m_Camera = Camera.main;
         m_GroundPlane = new Plane(Vector3.up, Vector3.zero);
 
@@ -47,8 +51,8 @@ public class Player : MonoBehaviour
         float rayHitDistance;
         if (m_GroundPlane.Raycast(ray, out rayHitDistance))
         {
-            m_LookAtPos = ray.GetPoint(rayHitDistance);
-            transform.LookAt(new Vector3(m_LookAtPos.x, transform.position.y, m_LookAtPos.z));
+            m_Aim.changed = true;
+            m_Aim.pos = ray.GetPoint(rayHitDistance);
         }
     }
 
@@ -67,7 +71,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawLine(m_Camera.transform.position, m_LookAtPos, Color.red);
+        //Debug.DrawLine(m_Camera.transform.position, m_LookAtPos, Color.red);
     }
 
     private void FixedUpdate()
@@ -76,7 +80,12 @@ public class Player : MonoBehaviour
         {
             Vector3 velocity = new Vector3(m_Velocity.x, 0, m_Velocity.y);
             transform.position = transform.position + velocity * Time.fixedDeltaTime;
-            transform.LookAt(new Vector3(m_LookAtPos.x, transform.position.y, m_LookAtPos.z));
+        }
+
+        if (m_Aim.changed)
+        {
+            transform.LookAt(new Vector3(m_Aim.pos.x, transform.position.y, m_Aim.pos.z));
+            m_Aim.changed = false;
         }
     }
 
